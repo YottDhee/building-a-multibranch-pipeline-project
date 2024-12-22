@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    environment {
-        CI = 'true'
+    tools {
+        nodejs 'NodeJS' // Name of the Node.js tool configuration in Jenkins
     }
     stages {
         stage('Build') {
