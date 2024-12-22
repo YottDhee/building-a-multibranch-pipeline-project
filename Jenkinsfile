@@ -4,9 +4,17 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('Setup Node.js') {
+            steps {
+                sh '''
+                    curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+                    sudo apt-get install -y nodejs
+                '''
+            }
+        }
         stage('Build') {
             steps {
-                sh 'echo "Build in progress"'
+                sh 'npm install'
             }
         }
         stage('Test') {
