@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        CI = 'true'
+    }
     stages {
         stage('Build') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm test'
+                sh './jenkins/scripts/test.sh'
             }
         }
     }
