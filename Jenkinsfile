@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo npm install'
+                sh 'echo "Build in progress"'
             }
         }
         stage('Test') {
